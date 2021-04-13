@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyNetDiaryTest</string>
+
+    <string name="toolbar_main">Main Screen</string>
+    <string name="toolbar_body_weight">Enter Body Weight</string>
+    <string name="toolbar_date_of_birth">Enter Date Of Birth</string>
+    <string name="toolbar_photo">Photo</string>
+
+    <string name="no_clients">No clients added do far.</string>
+
+    <string name="add_client">ADD CLIENT</string>
+    
+    <string name="weight">Weight</string>
+    <string name="dob">DOB</string>
+
+    <string name="edit">EDIT</string>
+    <string name="back">BACK</string>
+    <string name="next">NEXT</string>
+    <string name="done">DONE</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="main_fragment_label">MainFragment</string>
+    <string name="body_weight_fragment_label">BodyWeightFragment</string>
+</resources>
