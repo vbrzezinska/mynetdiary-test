@@ -19,8 +19,6 @@
             app:popupTheme="@style/Theme.MyNetDiaryTest.PopupOverlay" />
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--    <include layout="@layout/content_main" />-->
-
     <fragment
         android:id="@+id/navHostFragment"
         android:name="com.example.mynetdiarytest.screen.list.ClientsListFragment"

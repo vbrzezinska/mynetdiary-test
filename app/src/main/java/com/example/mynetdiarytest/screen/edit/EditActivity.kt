@@ -36,6 +36,8 @@ class EditActivity : BaseActivity() {
             )
         }
 
+        toolbar.title = getString(R.string.toolbar_body_weight)
+
         back.setOnClickListener {
             editStepper.moveToPreviousStep(
                 onSuccess = { step -> showStep(step) },
@@ -82,12 +84,27 @@ class EditActivity : BaseActivity() {
         when (step) {
             EditStep.BODY_WEIGHT -> {
                 addFragment(BodyWeightFragment.getInstance())
+
+                toolbar.title = getString(R.string.toolbar_body_weight)
+
+                back.text = getString(R.string.back)
+                next.text = getString(R.string.next)
             }
             EditStep.DATE_OF_BIRTH -> {
                 addFragment(DateOfBirthFragment.getInstance())
+
+                toolbar.title = getString(R.string.toolbar_date_of_birth)
+
+                back.text = getString(R.string.back)
+                next.text = getString(R.string.next)
             }
             EditStep.PHOTO -> {
                 addFragment(PhotoFragment.getInstance())
+
+                toolbar.title = getString(R.string.toolbar_photo)
+
+                back.text = getString(R.string.back)
+                next.text = getString(R.string.done)
             }
         }
     }

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Text" parent="TextAppearance.AppCompat"/>
 
+    <style name="Body" parent="Text">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="Body.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="Body.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Lead" parent="Text">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Lead.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Lead.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/blue</item>
+    </style>
 </resources>

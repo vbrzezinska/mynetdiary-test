@@ -6,14 +6,13 @@
 
     <TextView
         android:id="@+id/emptyText"
+        style="@style/Lead.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/base_x4"
         android:layout_marginLeft="@dimen/base_x4"
         android:layout_marginTop="@dimen/base_x7"
         android:text="@string/no_clients"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,11 +32,10 @@
 
     <Button
         android:id="@+id/addClient"
+        style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
         android:text="@string/add_client"
-        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator" />
 </androidx.constraintlayout.widget.ConstraintLayout>
