@@ -54,7 +54,7 @@
 
     <Button
         android:id="@+id/editButton"
-        style="@style/Button"
+        style="@style/Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit"

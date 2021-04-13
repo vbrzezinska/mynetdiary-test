@@ -70,15 +70,13 @@ class ClientsListActivity : BaseActivity() {
     private fun bindView(clients: List<Client> = emptyList()) {
         val items = mutableListOf<ListItem>()
 
-        clients?.let {
-            if (it.isEmpty()) {
-                items.add(EmptyItem())
-            } else {
-                it.map { client ->
-                    items.add(ClientItem(client))
-                }
+        if (clients.isEmpty()) {
+            items.add(EmptyItem())
+        } else {
+            clients.map { client ->
+                items.add(ClientItem(client))
             }
-        }?: items.add(EmptyItem())
+        }
 
         items.add(ActionsItem())
 

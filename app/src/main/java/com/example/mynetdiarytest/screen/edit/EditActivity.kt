@@ -55,9 +55,7 @@ class EditActivity : BaseActivity() {
         }
     }
 
-    override fun subscribe() {
-        // TODO implement
-    }
+    override fun subscribe() { }
 
     override fun getLayout(): Int = R.layout.a_edit
 
@@ -68,16 +66,12 @@ class EditActivity : BaseActivity() {
     private fun saveChanges() {
         Timber.d("#saveChanges")
 
-        viewModel.apply {
-            setPhoto()
-            saveChanges()
-        }
+        viewModel.saveChanges()
         finish()
     }
 
     private fun discardChanges() {
         Timber.d("#discardChanges")
-
         finish()
     }
 

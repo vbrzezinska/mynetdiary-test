@@ -5,6 +5,7 @@ import com.example.mynetdiarytest.R
 import com.example.mynetdiarytest.ui.BaseListItemDelegate
 import com.example.mynetdiarytest.ui.ListItem
 import com.example.mynetdiarytest.ui.ListItemViewHolder
+import com.example.mynetdiarytest.utils.loadImage
 import kotlinx.android.synthetic.main.i_client.view.*
 
 class ClientDelegate(
@@ -24,6 +25,10 @@ class ClientDelegate(
         holder.itemView.apply {
             weightTextView.text = "${item.client.weight}"
             dobTextView.text = "DOB"
+
+            item.client.imageUri?.let {
+                photoImageView.loadImage(it)
+            }
 
             editButton.setOnClickListener { onClickListener.invoke(item) }
         }
