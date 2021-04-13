@@ -7,6 +7,8 @@ import com.example.mynetdiarytest.ui.ListItem
 import com.example.mynetdiarytest.ui.ListItemViewHolder
 import com.example.mynetdiarytest.utils.loadImage
 import kotlinx.android.synthetic.main.i_client.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ClientDelegate(
     private val onClickListener: (ClientItem) -> Unit
@@ -23,8 +25,8 @@ class ClientDelegate(
         payloads: MutableList<Any>
     ) {
         holder.itemView.apply {
-            weightTextView.text = "${item.client.weight}"
-            dobTextView.text = "DOB"
+            weightTextView.text = item.weightText
+            dobTextView.text = item.dateOfBirthText
 
             item.client.imageUri?.let {
                 photoImageView.loadImage(it)

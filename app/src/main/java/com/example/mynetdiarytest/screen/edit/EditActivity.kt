@@ -93,8 +93,6 @@ class EditActivity : BaseActivity() {
                 next.text = getString(R.string.next)
             }
             EditStep.DATE_OF_BIRTH -> {
-                viewModel.setBodyWeight()
-
                 addFragment(DateOfBirthFragment.getInstance())
 
                 toolbar.title = getString(R.string.toolbar_date_of_birth)
@@ -103,8 +101,6 @@ class EditActivity : BaseActivity() {
                 next.text = getString(R.string.next)
             }
             EditStep.PHOTO -> {
-                viewModel.setDateOfBirth()
-
                 addFragment(PhotoFragment.getInstance())
 
                 toolbar.title = getString(R.string.toolbar_photo)

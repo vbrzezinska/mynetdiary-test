@@ -22,6 +22,7 @@ class EditViewModel @Inject constructor(
 
     fun setClient(client: Client) {
         this.client = client
+        data.value = this.client
     }
 
     fun setBodyWeight() {
@@ -31,10 +32,11 @@ class EditViewModel @Inject constructor(
         data.value = client
     }
 
-    fun setDateOfBirth() {
-        // TODO implement
-
-        data.value = client
+    fun setDateOfBirth(dateOfBirth: Long) {
+        client = client.copy(
+            dateOfBirth = dateOfBirth
+        )
+//        data.value = client
     }
 
     fun setPhoto(uri: Uri) {

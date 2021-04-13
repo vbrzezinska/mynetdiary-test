@@ -67,15 +67,13 @@ class ClientsListActivity : BaseActivity() {
         MyNetDiaryApp.appComponent.inject(this)
     }
 
-    private fun bindView(clients: List<Client> = emptyList()) {
+    private fun bindView(clients: List<ClientItem> = emptyList()) {
         val items = mutableListOf<ListItem>()
 
         if (clients.isEmpty()) {
             items.add(EmptyItem())
         } else {
-            clients.map { client ->
-                items.add(ClientItem(client))
-            }
+            items.addAll(clients)
         }
 
         items.add(ActionsItem())

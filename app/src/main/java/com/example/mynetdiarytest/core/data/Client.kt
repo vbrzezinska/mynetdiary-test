@@ -8,6 +8,7 @@ import kotlinx.android.parcel.Parcelize
 data class Client(
     val id: Int,
     val weight: Float,
+    val dateOfBirth: Long,
     val imageUri: Uri?
 ) : Parcelable {
 
@@ -15,6 +16,7 @@ data class Client(
         val EMPTY = Client(
             id = -1,
             weight = 0F,
+            dateOfBirth = System.currentTimeMillis(),
             imageUri = null)
     }
 }
