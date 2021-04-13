@@ -2,7 +2,8 @@ package com.example.mynetdiarytest.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mynetdiarytest.screen.MyNetDiaryViewModel
+import com.example.mynetdiarytest.screen.edit.EditViewModel
+import com.example.mynetdiarytest.screen.list.ClientsViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -17,8 +18,13 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MyNetDiaryViewModel::class)
-    abstract fun mainViewModel(viewModel: MyNetDiaryViewModel): ViewModel
+    @ViewModelKey(ClientsViewModel::class)
+    abstract fun clientsViewModel(viewModel: ClientsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EditViewModel::class)
+    abstract fun editViewModel(viewModel: EditViewModel): ViewModel
 
     @Binds
     internal abstract fun bindViewModelFactory(

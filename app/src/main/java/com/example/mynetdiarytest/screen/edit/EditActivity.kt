@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mynetdiarytest.MyNetDiaryApp
 import com.example.mynetdiarytest.R
+import com.example.mynetdiarytest.core.data.Client
 import com.example.mynetdiarytest.screen.BaseActivity
-import com.example.mynetdiarytest.screen.MyNetDiaryViewModel
 import com.example.mynetdiarytest.screen.edit.wizard.EditStep
 import com.example.mynetdiarytest.screen.edit.wizard.EditStepper
 import com.example.mynetdiarytest.screen.injectViewModel
@@ -20,13 +20,17 @@ class EditActivity : BaseActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel by lazy { injectViewModel<MyNetDiaryViewModel>(viewModelFactory) }
+    private val viewModel by lazy { injectViewModel<EditViewModel>(viewModelFactory) }
 
     private val editStepper = EditStepper()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel.setClient(intent.getParcelableExtra(CLIENT_KEY) ?: Client.EMPTY)
+
         setSupportActionBar(toolbar)
+        toolbar.title = getString(R.string.toolbar_body_weight)
 
         editStepper.apply {
             init(createSteps())
@@ -35,8 +39,6 @@ class EditActivity : BaseActivity() {
                 onError = { saveChanges() }
             )
         }
-
-        toolbar.title = getString(R.string.toolbar_body_weight)
 
         back.setOnClickListener {
             editStepper.moveToPreviousStep(
@@ -65,11 +67,17 @@ class EditActivity : BaseActivity() {
 
     private fun saveChanges() {
         Timber.d("#saveChanges")
+
+        viewModel.apply {
+            setPhoto()
+            saveChanges()
+        }
         finish()
     }
 
     private fun discardChanges() {
         Timber.d("#discardChanges")
+
         finish()
     }
 
@@ -91,6 +99,8 @@ class EditActivity : BaseActivity() {
                 next.text = getString(R.string.next)
             }
             EditStep.DATE_OF_BIRTH -> {
+                viewModel.setBodyWeight()
+
                 addFragment(DateOfBirthFragment.getInstance())
 
                 toolbar.title = getString(R.string.toolbar_date_of_birth)
@@ -99,6 +109,8 @@ class EditActivity : BaseActivity() {
                 next.text = getString(R.string.next)
             }
             EditStep.PHOTO -> {
+                viewModel.setDateOfBirth()
+
                 addFragment(PhotoFragment.getInstance())
 
                 toolbar.title = getString(R.string.toolbar_photo)
@@ -115,6 +127,13 @@ class EditActivity : BaseActivity() {
 
     companion object {
 
+        private const val CLIENT_KEY = "CLIENT_KEY"
+
         fun intentInstance(context: Context) = Intent(context, EditActivity::class.java)
+
+        fun intentInstance(context: Context, client: Client) =
+            Intent(context, EditActivity::class.java).apply {
+                putExtra(CLIENT_KEY, client)
+            }
     }
 }

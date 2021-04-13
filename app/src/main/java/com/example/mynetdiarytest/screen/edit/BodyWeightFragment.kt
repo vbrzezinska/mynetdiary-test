@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mynetdiarytest.MyNetDiaryApp
 import com.example.mynetdiarytest.R
 import com.example.mynetdiarytest.screen.BaseFragment
-import com.example.mynetdiarytest.screen.MyNetDiaryViewModel
 import com.example.mynetdiarytest.screen.injectViewModel
 import javax.inject.Inject
 
@@ -16,7 +15,7 @@ class BodyWeightFragment : BaseFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel by lazy { injectViewModel<MyNetDiaryViewModel>(viewModelFactory) }
+    private val viewModel by lazy { injectViewModel<EditViewModel>(viewModelFactory) }
 
     override fun onCreateView(
         inflater: LayoutInflater,

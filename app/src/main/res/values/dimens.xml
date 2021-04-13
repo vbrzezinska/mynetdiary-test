@@ -10,5 +10,5 @@
     <dimen name="photo_width">90dp</dimen>
     <dimen name="photo_height">115dp</dimen>
 
-    <dimen name="edit_padding_start">-50dp</dimen>
+    <dimen name="edit_padding_start">-48dp</dimen>
 </resources>

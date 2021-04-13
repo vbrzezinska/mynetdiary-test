@@ -1,6 +1,7 @@
 package com.example.mynetdiarytest.di
 
 import com.example.mynetdiarytest.di.module.AppModule
+import com.example.mynetdiarytest.di.module.RepositoryModule
 import com.example.mynetdiarytest.di.module.ViewModelModule
 import com.example.mynetdiarytest.screen.edit.BodyWeightFragment
 import com.example.mynetdiarytest.screen.edit.DateOfBirthFragment
@@ -11,7 +12,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, ViewModelModule::class])
+@Component(modules = [AppModule::class, RepositoryModule::class, ViewModelModule::class])
 interface AppComponent {
 
     fun inject(view: ClientsListActivity)

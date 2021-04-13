@@ -22,8 +22,8 @@ class ClientDelegate(
         payloads: MutableList<Any>
     ) {
         holder.itemView.apply {
-            weightTextView.text = item.weightText
-            dobTextView.text = item.dobText
+            weightTextView.text = "${item.client.weight}"
+            dobTextView.text = "DOB"
 
             editButton.setOnClickListener { onClickListener.invoke(item) }
         }
