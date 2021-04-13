@@ -12,7 +12,7 @@
     android:paddingBottom="@dimen/base_x2">
 
     <TextView
-        android:id="@+id/weightHint"
+        android:id="@+id/weightHintTextView"
         style="@style/Body.Gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,50 +20,51 @@
         android:layout_marginStart="@dimen/base_x3"
         android:layout_marginLeft="@dimen/base_x3"
         android:text="@string/weight"
-        app:layout_constraintStart_toEndOf="@+id/photo"
-        app:layout_constraintTop_toTopOf="@+id/photo" />
+        app:layout_constraintStart_toEndOf="@+id/photoImageView"
+        app:layout_constraintTop_toTopOf="@+id/photoImageView" />
 
     <TextView
-        android:id="@+id/weight"
+        android:id="@+id/weightTextView"
         style="@style/Body.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/weightHint"
-        app:layout_constraintTop_toBottomOf="@+id/weightHint"
+        app:layout_constraintStart_toStartOf="@+id/weightHintTextView"
+        app:layout_constraintTop_toBottomOf="@+id/weightHintTextView"
         tools:text="200lb" />
 
     <TextView
-        android:id="@+id/dobHint"
+        android:id="@+id/dobHintTextView"
         style="@style/Body.Gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/base_x3"
         android:layout_marginLeft="@dimen/base_x3"
         android:text="@string/dob"
-        app:layout_constraintStart_toEndOf="@+id/photo"
-        app:layout_constraintTop_toBottomOf="@+id/weight" />
+        app:layout_constraintStart_toEndOf="@+id/photoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/weightTextView" />
 
     <TextView
-        android:id="@+id/dob"
+        android:id="@+id/dobTextView"
         style="@style/Body.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/dobHint"
-        app:layout_constraintTop_toBottomOf="@+id/dobHint"
+        app:layout_constraintStart_toStartOf="@+id/dobHintTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dobHintTextView"
         tools:text="May 15, 1999" />
 
-    <TextView
-        android:id="@+id/edit"
-        style="@style/Lead.Blue"
+    <Button
+        android:id="@+id/editButton"
+        style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit"
-        android:layout_marginBottom="@dimen/base_x4"
-        app:layout_constraintStart_toStartOf="@+id/dobHint"
+        android:paddingStart="@dimen/edit_padding_start"
+        android:paddingLeft="@dimen/edit_padding_start"
+        app:layout_constraintStart_toStartOf="@+id/dobHintTextView"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageView
-        android:id="@+id/photo"
+        android:id="@+id/photoImageView"
         android:layout_width="@dimen/photo_width"
         android:layout_height="@dimen/photo_height"
         android:contentDescription="@null"

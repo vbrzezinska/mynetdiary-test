@@ -14,13 +14,10 @@
     </style>
 
     <style name="Lead" parent="Text">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
     <style name="Lead.Black">
         <item name="android:textColor">@color/black</item>
-    </style>
-    <style name="Lead.Blue">
-        <item name="android:textColor">@color/blue</item>
     </style>
 
     <style name="Button" parent="Widget.AppCompat.Button.Borderless">

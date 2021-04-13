@@ -2,7 +2,6 @@ package com.example.mynetdiarytest.di
 
 import com.example.mynetdiarytest.di.module.AppModule
 import com.example.mynetdiarytest.di.module.ViewModelModule
-import com.example.mynetdiarytest.screen.list.ClientsListFragment
 import com.example.mynetdiarytest.screen.edit.BodyWeightFragment
 import com.example.mynetdiarytest.screen.edit.DateOfBirthFragment
 import com.example.mynetdiarytest.screen.edit.EditActivity
@@ -16,7 +15,6 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(view: ClientsListActivity)
-    fun inject(view: ClientsListFragment)
 
     fun inject(view: EditActivity)
     fun inject(view: BodyWeightFragment)
