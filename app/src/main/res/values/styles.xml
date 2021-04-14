@@ -26,5 +26,6 @@
 
     <style name="Button.Borderless" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textColor">@color/blue</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 </resources>

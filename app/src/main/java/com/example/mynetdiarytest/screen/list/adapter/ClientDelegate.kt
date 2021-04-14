@@ -2,7 +2,6 @@ package com.example.mynetdiarytest.screen.list.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mynetdiarytest.R
-import com.example.mynetdiarytest.core.data.WeightUnit
 import com.example.mynetdiarytest.ui.BaseListItemDelegate
 import com.example.mynetdiarytest.ui.ListItem
 import com.example.mynetdiarytest.ui.ListItemViewHolder
