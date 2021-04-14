@@ -17,7 +17,7 @@
 
         <activity
             android:name=".screen.list.ClientsListActivity"
-            android:label="@string/toolbar_main"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MyNetDiaryTest.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
