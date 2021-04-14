@@ -1,7 +1,6 @@
 package com.example.mynetdiarytest.screen
 
 import android.content.Context
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -14,15 +13,7 @@ abstract class BaseFragment : Fragment() {
         addDependencies()
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        subscribe()
-    }
-
     abstract fun addDependencies()
-
-    abstract fun subscribe()
 }
 
 inline fun <reified T : ViewModel> Fragment.injectViewModel(factory: ViewModelProvider.Factory): T {

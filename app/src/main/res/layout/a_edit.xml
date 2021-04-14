@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MyNetDiaryTest.PopupOverlay" />
+            app:popupTheme="@style/Theme.MyNetDiaryTest.PopupOverlay"
+            app:title="@string/toolbar_body_weight" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

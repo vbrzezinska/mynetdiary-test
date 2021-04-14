@@ -29,7 +29,6 @@ class ClientsViewModel @Inject constructor(
         fun toViewModel(
             client: Client
         ) = ClientItem(
-            weightText = "",
             dateOfBirthText = dateFormat.format(Date(client.dateOfBirth)),
             client = client
         )

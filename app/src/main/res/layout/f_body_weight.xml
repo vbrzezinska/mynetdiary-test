@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+
+    <TextView
+        android:id="@+id/weightHintTextView"
+        style="@style/Lead.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_x4"
+        android:layout_marginTop="@dimen/base_x4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Your weight is 20 Kg" />
+
+    <TextView
+        android:id="@+id/minWeightTextView"
+        style="@style/Lead.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_x3"
+        android:layout_marginTop="@dimen/base_x4"
+        android:text="@string/min_weight"
+        app:layout_constraintStart_toStartOf="@+id/weightSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/weightHintTextView" />
+
+    <TextView
+        android:id="@+id/maxWeightTextView"
+        style="@style/Lead.Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_x4"
+        android:layout_marginEnd="@dimen/base_x3"
+        android:text="@string/max_weight"
+        app:layout_constraintEnd_toEndOf="@+id/weightSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/weightHintTextView" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/weightSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_x3"
+        android:layout_marginEnd="@dimen/base_x3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minWeightTextView" />
+
+    <RadioGroup
+        android:id="@+id/weightUnitsRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/base_x4"
+        android:paddingEnd="@dimen/base_x4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightSeekBar">
+
+        <RadioButton
+            android:id="@+id/kgRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kg" />
+
+        <RadioButton
+            android:id="@+id/lbRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lb" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

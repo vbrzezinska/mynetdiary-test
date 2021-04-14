@@ -1,10 +1,9 @@
 package com.example.mynetdiarytest.screen.edit
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mynetdiarytest.core.data.Client
+import com.example.mynetdiarytest.core.data.WeightUnit
 import com.example.mynetdiarytest.core.repository.ClientsRepository
 import javax.inject.Inject
 
@@ -12,38 +11,38 @@ class EditViewModel @Inject constructor(
     private val clientsRepository: ClientsRepository
 ) : ViewModel() {
 
-    private val data = MutableLiveData<Client>()
-
-    private lateinit var client: Client
-
-    fun getClient(): LiveData<Client> {
-        return data
-    }
+    private var client: Client = Client.EMPTY
 
     fun setClient(client: Client) {
         this.client = client
-        data.value = this.client
     }
 
-    fun setBodyWeight() {
+    fun getBodyWeight() = client.weight
+    fun setBodyWeight(weight: Int) {
         client = client.copy(
-            weight = 1F
+            weight = weight
         )
-        data.value = client
     }
 
+    fun getBodyWeightUnit() = client.weightUnit
+    fun setBodyWeightUnit(weightUnit: WeightUnit) {
+        client = client.copy(
+            weightUnit = weightUnit
+        )
+    }
+
+    fun getDateOfBirth() = client.dateOfBirth
     fun setDateOfBirth(dateOfBirth: Long) {
         client = client.copy(
             dateOfBirth = dateOfBirth
         )
-//        data.value = client
     }
 
+    fun getPhoto() = client.imageUri
     fun setPhoto(uri: Uri) {
         client = client.copy(
             imageUri = uri
         )
-        data.value = client
     }
 
     fun saveChanges() {

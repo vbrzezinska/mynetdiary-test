@@ -9,9 +9,16 @@
     <string name="no_clients">No clients added so far.</string>
 
     <string name="add_client">ADD CLIENT</string>
-    
+
     <string name="weight">Weight</string>
+    <string name="weight_format">%1$d %2$s</string>
     <string name="dob">DOB</string>
+
+    <string name="weight_hint">Your weight is %1$d %2$s</string>
+    <string name="min_weight">0</string>
+    <string name="max_weight">500</string>
+    <string name="lb">LB</string>
+    <string name="kg">KG</string>
 
     <string name="take_photo">Take a photo!</string>
     <string name="choose_photo">Choose a photo!</string>

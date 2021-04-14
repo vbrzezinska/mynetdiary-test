@@ -30,7 +30,6 @@ class EditActivity : BaseActivity() {
         viewModel.setClient(intent.getParcelableExtra(CLIENT_KEY) ?: Client.EMPTY)
 
         setSupportActionBar(toolbar)
-        toolbar.title = getString(R.string.toolbar_body_weight)
 
         editStepper.apply {
             init(createSteps())

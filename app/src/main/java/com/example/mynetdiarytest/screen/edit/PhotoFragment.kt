@@ -13,7 +13,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mynetdiarytest.BuildConfig
 import com.example.mynetdiarytest.MyNetDiaryApp
@@ -44,6 +43,10 @@ class PhotoFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        viewModel.getPhoto()?.let {
+            photoImageView.loadImage(it)
+        }
+
         takePhotoButton.setOnClickListener {
             openCamera()
         }
@@ -72,14 +75,6 @@ class PhotoFragment : BaseFragment() {
                 }
             }
         }
-    }
-
-    override fun subscribe() {
-        viewModel.getClient().observe(this, Observer {
-            it.imageUri?.let { uri ->
-                photoImageView.loadImage(uri)
-            }
-        })
     }
 
     override fun addDependencies() {
@@ -120,7 +115,7 @@ class PhotoFragment : BaseFragment() {
         permissions: Array<String>
     ): Boolean {
         if (permissions.isEmpty()) return true
-        val ret = ActivityCompat.checkSelfPermission(context, permissions[0])
+
         return permissions.none {
             ActivityCompat.checkSelfPermission(
                 context,

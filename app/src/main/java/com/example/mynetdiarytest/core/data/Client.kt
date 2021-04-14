@@ -7,7 +7,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Client(
     val id: Int,
-    val weight: Float,
+    val weight: Int,
+    val weightUnit: WeightUnit,
     val dateOfBirth: Long,
     val imageUri: Uri?
 ) : Parcelable {
@@ -15,8 +16,13 @@ data class Client(
     companion object {
         val EMPTY = Client(
             id = -1,
-            weight = 0F,
+            weight = 0,
+            weightUnit = WeightUnit.KG,
             dateOfBirth = System.currentTimeMillis(),
             imageUri = null)
     }
+}
+
+enum class WeightUnit {
+    KG, LB
 }

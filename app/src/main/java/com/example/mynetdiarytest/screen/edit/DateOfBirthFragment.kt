@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mynetdiarytest.MyNetDiaryApp
 import com.example.mynetdiarytest.R
@@ -31,23 +30,22 @@ class DateOfBirthFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        dobDatePicker.setOnDateChangedListener { _, year, month, day ->
-            val calendar = Calendar.getInstance().apply {
-                set(Calendar.YEAR, year)
-                set(Calendar.MONTH, month)
-                set(Calendar.DATE, day)
-            }
-            viewModel.setDateOfBirth(calendar.timeInMillis)
+        val calendar = Calendar.getInstance().apply {
+            timeInMillis = viewModel.getDateOfBirth()
         }
-    }
 
-    override fun subscribe() {
-        viewModel.getClient().observe(this, Observer {
-            val calendar = Calendar.getInstance().apply {
-                timeInMillis = it.dateOfBirth
+        dobDatePicker.apply {
+            updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE))
+
+            setOnDateChangedListener { _, year, month, day ->
+                val calendar = Calendar.getInstance().apply {
+                    set(Calendar.YEAR, year)
+                    set(Calendar.MONTH, month)
+                    set(Calendar.DATE, day)
+                }
+                viewModel.setDateOfBirth(calendar.timeInMillis)
             }
-            dobDatePicker.updateDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE))
-        })
+        }
     }
 
     override fun addDependencies() {
