@@ -58,7 +58,9 @@ class PhotoFragment : BaseFragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
         if (resultCode != Activity.RESULT_OK) return
+
         when (requestCode) {
             REQUEST_IMAGE_CAPTURE -> {
                 imageURI?.let {
@@ -86,7 +88,7 @@ class PhotoFragment : BaseFragment() {
             imageURI = FileProvider.getUriForFile(
                 requireContext(),
                 BuildConfig.APPLICATION_ID + ".fileprovider",
-                File(requireContext().externalCacheDir, "pickImageResult.jpeg")
+                File(requireContext().externalCacheDir, "${System.currentTimeMillis()}.jpeg")
             )
             imageURI?.let {
                 Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->

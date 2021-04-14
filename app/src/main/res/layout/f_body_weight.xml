@@ -58,6 +58,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/base_x4"
         android:paddingEnd="@dimen/base_x4"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightSeekBar">
 
